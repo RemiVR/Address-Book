@@ -1,6 +1,7 @@
-<%= form_for [@phone_number] do |f|%>
+<%= form_for [@contact, @phone_number] do |f|%>
 	<%= f.label :phone_number%>
 	<%= f.text_field :phone_number%>
 	<br>
+	<%= f.hidden_field :contact_id, value: @contact.id%>
 	<%= f.submit 'Add'%>
 <%end%>

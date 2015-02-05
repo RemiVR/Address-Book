@@ -6,5 +6,6 @@
 	<li><% @contact.phone_numbers.each do |ph|%>
 		<%= ph.phone_number%> 
 		<%end%>
-		<%= link_to("add phone number", phone_numbers_path)%></li>
+		<%= link_to("add phone number", contact_phone_numbers_path(@contact.id))%></li>
 </ul>
+<h4><%= link_to("Back", contacts_path)%></h4>

@@ -1,0 +1,7 @@
+<%= form_for [@contact, @email_address] do |f|%>
+	<%= f.label :email_address%>
+	<%= f.text_field :email_address%>
+	<br>
+	<%= f.hidden_field :contact_id, value: @contact.id%>
+	<%= f.submit 'Add'%>
+<%end%>

@@ -3,12 +3,14 @@ class PhoneNumbersController < ApplicationController
 		@phone_number = PhoneNumber.find(params[:id])
 	end
 	def new
+		@contact = Contact.find(params[:contact_id])
 		@phone_number = PhoneNumber.new
 	end
 	def create
+		@contact = Contact.find(params[:contact_id])
 		@phone_number = PhoneNumber.new phone_params
 		if @phone_number.save
-			redirect_to action: 'show', controller: 'contacts'
+			redirect_to action: 'show', controller: 'contacts', id: @contact
 		else
 			render 'new'
 		end

@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new contact_params
 		if @contact.save
-			redirect_to action: 'index', controller: 'contacts'
+			redirect_to action: 'show', controller: 'contacts'
 		else
 			render 'new'
 		end
