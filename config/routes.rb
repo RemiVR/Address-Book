@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+
+
+get '/' => 'site#home'
+get '/contacts' => 'contacts#index'
+get '/contacts/new' => 'contacts#new'
+post '/contacts' => 'contacts#create'
+get '/contacts/:id/phone_numbers/:id' => 'contacts#show', as: 'contact_show'
+get '/phone_numbers' => 'phone_numbers#new'
+post '/phone_numbers' => 'phone_numbers#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

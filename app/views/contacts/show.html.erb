@@ -1,0 +1,10 @@
+<h2>Contact</h2>
+
+<ul>
+	<li><%= @contact.name%></li>
+	<li><%= @contact.address%></li>
+	<li><% @contact.phone_numbers.each do |ph|%>
+		<%= ph.phone_number%> 
+		<%end%>
+		<%= link_to("add phone number", phone_numbers_path)%></li>
+</ul>
