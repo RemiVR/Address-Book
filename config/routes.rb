@@ -7,6 +7,8 @@ get '/contacts' => 'contacts#index'
 get '/contacts/new' => 'contacts#new'
 post '/contacts' => 'contacts#create'
 get '/contacts/:id' => 'contacts#show', as: 'contact_show'
+get '/contacts/:contact_id/email_addresses' => 'email_addresses#new', as: 'contact_email_addresses'
+post '/contacts/:contact_id/email_addresses' => 'email_addresses#create'
 get '/contacts/:contact_id/phone_numbers' => 'phone_numbers#new', as: 'contact_phone_numbers'
 post '/contacts/:contact_id/phone_numbers' => 'phone_numbers#create'
 
