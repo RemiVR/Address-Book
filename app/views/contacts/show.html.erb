@@ -1,16 +1,16 @@
 <h2>Contact</h2>
 
 <ul>
-	<li><%= @contact.name%></li>
-	<li><%= @contact.address%></li>
-	<li><% @contact.phone_numbers.each do |ph|%>
-		<><%= ph.phone_number%> 
+	<li><strong>Name: </strong><em><%= @contact.name%></em></li>
+	<li><strong>Address: </strong><em><%= @contact.address%></em></li>
+	<li><strong>Phone Number: </strong><% @contact.phone_numbers.each do |ph|%>
+		<%= ph.phone_number%><br/>
 		<%end%>
 		<%= link_to("add phone number", contact_phone_numbers_path(@contact.id))%></li>
 
-<li><% @contact.email_addresses.each do |ea|%>
-		<><%= ea.email_address%> 
-		<%end%>
+	<li><strong>Email Address: </strong><em><% @contact.email_addresses.each do |ea|%>
+		<%= ea.email_address%> <br/>
+		<%end%></em>
 		<%= link_to("add email address", contact_email_addresses_path(@contact.id))%></li>
 </ul>
 <h4><%= link_to("Back", contacts_path)%></h4>

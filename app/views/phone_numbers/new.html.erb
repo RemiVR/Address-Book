@@ -3,5 +3,7 @@
 	<%= f.text_field :phone_number%>
 	<br>
 	<%= f.hidden_field :contact_id, value: @contact.id%>
+	<br>
 	<%= f.submit 'Add'%>
 <%end%>
+<h4><%= link_to("Back", contact_show_path(@contact.id))%></h4>
